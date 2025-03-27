@@ -125,12 +125,13 @@ async function loadImage(isInitialLoad = false) {
       imageContainer.innerHTML = '<div class="loading">Cargando imagen del día...</div>';
       const response = await fetch(`${NASA_APOD_URL}?api_key=${nasaApiKey}`);
 console.log("Respuesta de la API NASA:", response);
-console.log("Contenido de la respuesta:", await response.text());
+const responseText = await response.text();
+console.log("Contenido de la respuesta:", responseText);
       if (!response.ok) {
         const errorText = await response.text();
         throw new Error(`Error al cargar la imagen del día: ${response.status} ${response.statusText} - ${errorText}`);
       }
-      const data = await response.json();
+const data = JSON.parse(responseText);
       console.log("Imagen del día cargada:", data);
       currentImage = data;
       renderImage();
