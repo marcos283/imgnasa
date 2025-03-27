@@ -1,0 +1,13 @@
+{
+  "name": "nasa-apod",
+  "version": "1.0.0",
+  "description": "Aplicación para mostrar la imagen astronómica del día de la NASA",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1"
+  }
+}
