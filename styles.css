@@ -1,0 +1,208 @@
+/* Estilos generales */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #0b3d91, #000000); /* Degradado espacial */
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+  padding: 10px; /* Ajuste para pantallas pequeñas */
+}
+
+.main-container {
+  max-width: 800px;
+  width: 90%;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  animation: glow 2s infinite alternate;
+  text-align: center;
+}
+
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 5px #ffcc00, 0 0 10px #ffcc00, 0 0 15px #ffcc00;
+  }
+  100% {
+    text-shadow: 0 0 10px #ffcc00, 0 0 20px #ffcc00, 0 0 30px #ffcc00;
+  }
+}
+
+.image-container {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+/* Fallback para navegadores que no soportan backdrop-filter */
+@supports (backdrop-filter: blur(10px)) {
+  .image-container {
+    backdrop-filter: blur(10px);
+  }
+}
+
+.carousel-content {
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.carousel-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.caption {
+  margin-top: 10px;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
+  color: white;
+  width: 100%;
+  display: flex;
+  flex-direction: column; /* Alineación vertical */
+}
+
+.caption h2 {
+  font-size: 1.5em;
+  margin-bottom: 5px; /* Espacio entre título y fecha */
+}
+
+.caption p {
+  font-size: 1em;
+  line-height: 1.6;
+  margin: 0; /* Eliminar márgenes del párrafo */
+}
+
+/* Contenedor para centrar el botón */
+.button-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 20px;
+}
+
+/* Estilos para el botón "Más imágenes" */
+#change-btn {
+  background-color: #ffcc00;
+  color: #000;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1em;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  font-family: 'Orbitron', sans-serif; /* Fuente futurista */
+  letter-spacing: 2px; /* Espaciado entre letras */
+  text-shadow: 0 0 5px rgba(255,255,255,0.5); /* Sombra sutil */
+}
+
+#change-btn:hover {
+  background-color: #ffffff;
+  color: #000;
+}
+
+
+/* Estilos para el botón "Traducir" */
+.translate-btn {
+  background-color: #ffcc00;
+  color: #000;
+  border: none;
+  padding: 2px 4px;
+  font-size: 1em;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  font-family: 'Orbitron', sans-serif; /* Fuente futurista */
+  letter-spacing: 2px; /* Espaciado entre letras */
+  text-shadow: 0 0 5px rgba(255,255,255,0.5); /* Sombra sutil */
+  margin-left: auto; /* Alineación a la derecha */
+}
+
+.translate-btn:hover {
+  background-color: #ffffff;
+  color: #000;
+}
+
+.translate-btn:disabled {
+  background-color: #666;
+  color: #ccc;
+  cursor: not-allowed;
+}
+
+.loading {
+  padding: 20px;
+  font-style: italic;
+}
+
+/* Indicador de carga */
+.loading-indicator {
+  display: inline-block;
+  margin-left: 5px;
+  font-size: 0.8em;
+}
+
+/* Media queries para responsividad */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2em;
+  }
+  
+  .caption h2 {
+    font-size: 1.3em;
+  }
+  
+  .caption p {
+    font-size: 0.9em;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.7em;
+  }
+  
+  .caption h2 {
+    font-size: 1.1em;
+  }
+  
+  #change-btn, .translate-btn {
+    padding: 8px 16px;
+    font-size: 0.9em;
+  }
+}
+
+/* Estilo para el contenedor de la fecha */
+.date-container {
+  display: flex; /* Para alinear la fecha y el botón */
+  align-items: center; /* Alineación vertical */
+}
