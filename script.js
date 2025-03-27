@@ -1,7 +1,7 @@
 // Constantes globales
 const NASA_APOD_URL = "https://api.nasa.gov/planetary/apod";
-const nasaApiKey = process.env.NASA_API_KEY;
-const googleTranslateApiKey = process.env.GOOGLE_TRANSLATE_API_KEY;
+const nasaApiKey = NASA_API_KEY;
+const googleTranslateApiKey = GOOGLE_TRANSLATE_API_KEY;
 
 // Variables globales para elementos del DOM
 let imageContainer;
